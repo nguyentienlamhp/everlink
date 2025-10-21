@@ -1,12 +1,24 @@
 <!DOCTYPE html>
 <html lang="vi">
   <body>
-<div style="width: 100%; height: 500px">
+<div id="main-chat" style="width: 100%; height: 500px">
   <n8nchatui-inpage></n8nchatui-inpage>
 </div>
-
+<script>
+window.addEventListener('load', function() {
+  var height = window.innerHeight;
+  var chat = document.getElementById('main-chat');
+  if (chat) {
+    chat.style.height = height + 'px';
+    chat.style.maxHeight = height + 'px';
+    console.log('Chiều cao WebView:', height);
+  }
+});
+</script>
     <script type="module" defer>
         import Chatbot from "./embed.js";
+     
+      
         Chatbot.initFull({
             n8nChatUrl: "https://n8n.sangtaoketnoi.vn/webhook/1d4b5500-34ca-4be1-b8c7-090531ce9746/chat",
             metadata: {},
@@ -41,9 +53,8 @@
                     welcomeMessage: "Chào bạn! Mình có thể giúp gì cho bạn?",
                     errorMessage: "Please connect me to n8n first",
                     backgroundColor: "#ffffff",
-                    height: 500,
-                   "height": 0,
-                    "width": 0,
+                    height: 0,
+                    width: 0,
                     starterPrompts: ["Thông tin về bào ngư?", "Đơn giá của bào ngư?"],
                     starterPromptFontSize: 15,
                     renderHTML: false,

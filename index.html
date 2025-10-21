@@ -1,3 +1,94 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <body>
 <div style="width: 100%; height: 100%">
   <n8nchatui-inpage></n8nchatui-inpage>
 </div>
+
+    <script type="module" defer>
+        import Chatbot from "/embed.js";
+        Chatbot.initFull({
+            n8nChatUrl: "https://n8n.sangtaoketnoi.vn/webhook/1d4b5500-34ca-4be1-b8c7-090531ce9746/chat",
+            metadata: {},
+            theme: {
+                button: {
+                    backgroundColor: "#ffc8b8",
+                    right: 20,
+                    bottom: 20,
+                    size: 70,
+                    iconColor: "#373434",
+                    customIconSrc: "https://www.svgrepo.com/show/339963/chat-bot.svg",
+                    customIconSize: 80,
+                    customIconBorderRadius: 15,
+                    autoWindowOpen: { autoOpen: true, openDelay: 1 },
+                    borderRadius: "rounded"
+                },
+                tooltip: {
+                    showTooltip: true,
+                    tooltipMessage: "Chatbot Anh Minh",
+                    tooltipBackgroundColor: "#fff9f6",
+                    tooltipTextColor: "#1c1c1c",
+                    tooltipFontSize: 18
+                },
+                chatWindow: {
+                    borderRadiusStyle: "rounded",
+                    avatarBorderRadius: 25,
+                    messageBorderRadius: 6,
+                    showTitle: true,
+                    title: "Chatbot Anh Minh Company",
+                    titleAvatarSrc: "https://amfco.com.vn/Data/images/SAN%20PHAM/ok.jpg",
+                    avatarSize: 40,
+                    welcomeMessage: "Chào bạn! Mình có thể giúp gì cho bạn?",
+                    errorMessage: "Please connect me to n8n first",
+                    backgroundColor: "#ffffff",
+                    height: 500,
+                    width: 450,
+                    fontSize: 18,
+                    starterPrompts: ["Thông tin về bào ngư?", "Đơn giá của bào ngư?"],
+                    starterPromptFontSize: 15,
+                    renderHTML: false,
+                    clearChatOnReload: false,
+                    showScrollbar: false,
+                    botMessage: {
+                        backgroundColor: "#f36539",
+                        textColor: "#fafafa",
+                        showAvatar: true,
+                        avatarSrc: "https://www.svgrepo.com/show/474732/assistant.svg",
+                        showCopyToClipboardIcon: false
+                    },
+                    userMessage: {
+                        backgroundColor: "#fff6f3",
+                        textColor: "#050505",
+                        showAvatar: true,
+                        avatarSrc: "https://www.svgrepo.com/show/522697/user-round.svg"
+                    },
+                    textInput: {
+                        placeholder: "Nhập câu hỏi của bạn...",
+                        backgroundColor: "#ffffff",
+                        textColor: "#1e1e1f",
+                        sendButtonColor: "#f36539",
+                        maxChars: 400,
+                        maxCharsWarningMessage:
+                            "Bạn đã nhập quá 400 ký tự.",
+                        autoFocus: true,
+                        borderRadius: 6,
+                        sendButtonBorderRadius: 50
+                    },
+                    uploadsConfig: {
+                        enabled: false,
+                        acceptFileTypes: ["jpeg", "jpg", "png", "pdf"],
+                        maxFiles: 5,
+                        maxSizeInMB: 10
+                    },
+                    voiceInputConfig: {
+                        enabled: false,
+                        maxRecordingTime: 15,
+                        recordingNotSupportedMessage:
+                            "To record audio, use modern browsers like Chrome or Firefox that support audio recording"
+                    }
+                }
+            }
+        });
+    </script>
+    </body>
+</html>

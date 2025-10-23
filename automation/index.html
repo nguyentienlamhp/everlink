@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+  <link rel="icon" type="image/x-icon" href="./favicon.ico">
+</head>
+  <body>
+<div id="main-chat" style="width: 100%; height: 500px">
+  <n8nchatui-inpage></n8nchatui-inpage>
+</div>
+<script>
+window.addEventListener('load', function() {
+  var height = window.innerHeight;
+  var chat = document.getElementById('main-chat');
+  if (chat) {
+    chat.style.height = height + 'px';
+    chat.style.maxHeight = height + 'px';
+    console.log('Chiều cao WebView:', height);
+  }
+});
+</script>
+    <script type="module" defer>
+        import Chatbot from "./embed.js";
+        Chatbot.initFull({
+            n8nChatUrl: "https://n8n.sangtaoketnoi.vn/webhook/9611d900-4176-4cdb-af96-19a59ff302f9/chat",
+            metadata: {},
+            theme: {
+                button: {
+                    backgroundColor: "#327ffb",
+                    right: 20,
+                    bottom: 20,
+                    size: 70,
+                    iconColor: "#ffffff",
+                    customIconSrc: "https://www.svgrepo.com/show/339963/chat-bot.svg",
+                    customIconSize: 80,
+                    customIconBorderRadius: 15,
+                    autoWindowOpen: { autoOpen: true, openDelay: 1 },
+                    borderRadius: "rounded"
+                },
+                tooltip: {
+                    showTooltip: true,
+                    tooltipMessage: "Chatbot!",
+                    tooltipBackgroundColor: "#fff9f6",
+                    tooltipTextColor: "#1c1c1c",
+                    tooltipFontSize: 18
+                },
+                chatWindow: {
+                    borderRadiusStyle: "rounded",
+                    avatarBorderRadius: 25,
+                    messageBorderRadius: 6,
+                    showTitle: true,
+                    title: "Chatbot Anh Minh Company",
+		    titleAvatarSrc: "data:image/png;base64,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",
+                    avatarSize: 35,
+                    welcomeMessage: "Chào bạn! Mình có thể giúp gì cho bạn?",
+                    errorMessage: "He thong dang ban! Vui long thu lai",
+                    backgroundColor: "#ffffff",
+                    height: 0,
+                    width: 0,
+                    fontSize: 16,
+                    starterPrompts: ["Thông tin về bào ngư?", "Đơn giá của bào ngư?"],
+                    starterPromptFontSize: 16,
+                    renderHTML: false,
+                    clearChatOnReload: false,
+                    showScrollbar: true,
+                    botMessage: {
+                        backgroundColor: "#dcdbdb" ,
+                        textColor: "#050505",
+                        showAvatar: true,
+                        avatarSrc: "https://www.svgrepo.com/show/474732/assistant.svg",
+                        showCopyToClipboardIcon: false
+                    },
+                    userMessage: {
+                        backgroundColor:"#395ff3",
+                        textColor: "#ffffff",
+                        showAvatar: true,
+                        avatarSrc: "https://www.svgrepo.com/show/535711/user.svg"
+                    },
+                    textInput: {
+                        placeholder: "Nhập câu hỏi của bạn...",
+                        backgroundColor: "#ffffff",
+                        textColor: "#1e1e1f",
+                        sendButtonColor: "#f0310f",
+                        maxChars: 400,
+                        maxCharsWarningMessage:
+                            "Bạn đã nhập quá 400 ký tự.",
+                        autoFocus: false,
+                        borderRadius: 6,
+                        sendButtonBorderRadius: 50
+                    },
+                    uploadsConfig: {
+                        enabled: false,
+                        acceptFileTypes: ["jpeg", "jpg", "png", "pdf"],
+                        maxFiles: 5,
+                        maxSizeInMB: 10
+                    },
+                    voiceInputConfig: {
+                        enabled: false,
+                        maxRecordingTime: 15,
+                        recordingNotSupportedMessage:
+                            "To record audio, use modern browsers like Chrome or Firefox that support audio recording"
+                    }
+                }
+            }
+        });
+    </script>
+    </body>
+</html>

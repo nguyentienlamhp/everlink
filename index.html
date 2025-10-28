@@ -103,6 +103,17 @@ window.addEventListener('load', function() {
                 }
             }
         });
+		Chatbot.on("message", (msg) => {
+		  const container = document.querySelector(".chatbot-messages");
+		  const lastMsg = container?.lastElementChild;
+		  if (lastMsg) {
+		    const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+		    const timeTag = document.createElement("div");
+		    timeTag.textContent = time;
+		    timeTag.className = "chat-timestamp";
+		    lastMsg.appendChild(timeTag);
+		  }
+		});
     </script>
     </body>
 </html>
